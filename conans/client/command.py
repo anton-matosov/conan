@@ -177,6 +177,7 @@ class Command(object):
                             help='Optional. Do not remove the source folder in local cache. '
                                  'Use for testing purposes only')
         parser.add_argument("--cwd", "-c", help='Use this directory as the current directory')
+        parser.add_argument("--no-upload", "-nu", help='Do not upload this package build')
 
         _add_manifests_arguments(parser)
         _add_common_install_arguments(parser, build_help=_help_build_policies)
@@ -190,7 +191,7 @@ class Command(object):
                                   args.build, args.keep_source, args.verify, args.manifests,
                                   args.manifests_interactive, args.remote, args.update,
                                   cwd=args.cwd, name=name, version=version, user=user,
-                                  channel=channel)
+                                  channel=channel, no_upload=args.no_upload)
 
     def package_files(self, *args):
         """Creates a package binary from given precompiled artifacts in user folder, skipping

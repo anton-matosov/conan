@@ -260,7 +260,7 @@ class ConanAPIV1(object):
                keep_source=False, verify=default_manifest_folder,
                manifests=default_manifest_folder, manifests_interactive=default_manifest_folder,
                remote=None, update=False, cwd=None,
-               user=None, channel=None, name=None, version=None):
+               user=None, channel=None, name=None, version=None, no_upload=False):
 
         settings = settings or []
         options = options or []
